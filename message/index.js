@@ -453,6 +453,128 @@ module.exports = msgHandler = async (bocchi = new Client(), message) => {
                     console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
                 }
             break
+			
+			// TEXTOS
+
+            case 'blackpink':
+             if (args.length == 0) return bocchi.reply(from, `Membuat Gambar Text BlackPink\nPemakaian: ${prefix}blackpink [teks]\n\ncontoh: ${prefix}blackpink Dimas`, id)
+                await bocchi.reply(from, `Aguarde....`, id)
+                console.log('Criando texto...')
+                const lblackpink = body.slice(11)
+                await bocchi.sendFileFromUrl(from, `https://docs-jojo.herokuapp.com/api/blackpink?text=${lblackpink}`, '', 'Aí está...', id)
+                    .then(() => console.log('Sucesso ao criar imagem!!'))
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, `Error!`, id)
+                    })
+            break
+            case '3d':
+             if (args.length == 0) return bocchi.reply(from, `Membuat Gambar Text 3D\nPemakaian: ${prefix}text3d [teks]\n\ncontoh: ${prefix}text3d Dimas`, id)
+                await bocchi.reply(from, `Aguarde....`, id)
+                console.log('Creating text3d text...')
+                const ltext3d = body.slice(3)
+                await bocchi.sendFileFromUrl(from, `https://docs-jojo.herokuapp.com/api/text3d?text=${ltext3d}`, '', 'Aí está...', id)
+                    .then(() => console.log('Sucesso ao criar imagem!'))
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, `Error!`, id)
+                    })
+            break		
+            case 'thundertext':
+              if (!isGroupMsg) return bocchi.reply(from, menuId.textPrem())
+              if (args.length == 0) return bocchi.reply(from, `Membuat Text Gambar thunder\nPemakaian: ${prefix}thundertext [teks]\n\ncontoh: ${prefix}thundertext Dimas`, id)
+                    await bocchi.reply(from, `Wait....`, id)
+                console.log('Creating Thunder text...')
+                const lthundertext = body.slice(13)
+                await bocchi.sendFileFromUrl(from, `https://api.vhtear.com/thundertext?text=${lthundertext}&apikey=${config.vhtear}`, '', 'Nih...', id)
+                    .then(() => console.log('Success creting image!'))
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, `Erro!!`, id)
+                    })
+            break		
+            case 'slidingtext':
+             if (!isGroupMsg) return bocchi.reply(from, menuId.textPrem())
+             if (args.length == 0) return bocchi.reply(from, `Membuat Text Sliding\nPemakaian: ${prefix}slidingtext [teks]\n\ncontoh: ${prefix}slidingtext Dimas`, id)
+                    await bocchi.reply(from, `Wait....`, id)
+                console.log('Creating slidingtext text...')
+                const lslidingtext = body.slice(13)
+                await bocchi.sendFileFromUrl(from, `https://api.vhtear.com/slidingtext?text=${lslidingtext}&apikey=${config.vhtear}`, '', 'neh....', id)
+                    .then(() => console.log('Success creting image!'))
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, `Error!`, id)
+                    })
+            break
+            case 'lovemessagetext':
+             if (!isGroupMsg) return bocchi.reply(from, menuId.textPrem())
+             if (args.length == 0) return bocchi.reply(from, `Membuat Text jadi Gambar lovemessage\nPemakaian: ${prefix}lovemessagetext [teks]\n\ncontoh: ${prefix}lovemessagetext Dimas D`, id)
+                    await bocchi.reply(from, `Wait....`, id)
+                console.log('Creating lovemessagetext text...')
+                const llovemessagetext = body.slice(17)
+                await bocchi.sendFileFromUrl(from, `https://api.vhtear.com/lovemessagetext?text=${llovemessagetext}&apikey=${config.vhtear}`, '', 'Nih...', id)
+                    .then(() => console.log('Success creting image!'))
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, `Error!`, id)
+                    })
+            break
+            case 'glowtext':
+             if (!isGroupMsg) return bocchi.reply(from, menuId.textPrem())
+              if (args.length == 0) return bocchi.reply(from, `Membuat Text jadi Gambar ala ala glow gitu\nPemakaian: ${prefix}glowtext [teks]\n\ncontoh: ${prefix}glowtext Dimas D`, id)
+                    await bocchi.reply(from, `Wait....`, id)
+                console.log('Creating glowtext text...')
+                const lglowtext = body.slice(10)
+                await bocchi.sendFileFromUrl(from, `https://api.vhtear.com/glowtext?text=${lglowtext}&apikey=${config.vhtear}`, '', 'Nih...', id)
+                    .then(() => console.log('Success creting image!'))
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, `Error!`, id)
+                    })
+            break
+            case 'romancetext':
+             if (!isGroupMsg) return bocchi.reply(from, menuId.textPrem())
+             if (args.length == 0) return bocchi.reply(from, `Membuat Text jadi Gambar ala ala romance\nPemakaian: ${prefix}romancetext [teks]\n\ncontoh: ${prefix}romancetext Dimas dan Ujang`, id)
+                    await bocchi.reply(from, `Wait....`, id)
+                console.log('Creating romancetext text...')
+                const lpartytext = body.slice(11)
+                await bocchi.sendFileFromUrl(from, `https://api.vhtear.com/romancetext?text=${lpartytext}&apikey=${config.vhtear}`, '', 'Nih...', id)
+                    .then(() => console.log('Success creting image!'))
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, `Error!`, id)
+                    })
+            break
+            case 'silktext':
+             if (!isGroupMsg) return bocchi.reply(from, menuId.textPrem())
+             if (args.length == 0) return bocchi.reply(from, `Membuat Text jadi Gambar Nature\nPemakaian: ${prefix}textmaker [teks]\n\ncontoh: ${prefix}textmaker Dimas`, id)
+                    await bocchi.reply(from, `Wait....`, id)
+                console.log('Creating textmaker text...')
+                const lsilktext = body.slice(10)
+                await bocchi.sendFileFromUrl(from, `https://api.vhtear.com/silktext?text=${lsilktext}&apikey=${config.vhtear}`, '', 'Nih...', id)
+                    .then(() => console.log('Success creting image!'))
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, `Error!`, id)
+                    })
+            break
+            case 'partytext':
+             if (!isGroupMsg) return bocchi.reply(from, menuId.textPrem())
+             if (args.length == 0) return bocchi.reply(from, `Membuat Text jadi Gambar ala ala party\nPemakaian: ${prefix}partytext [teks]\n\ncontoh: ${prefix}partytext Dimas`, id)
+                    await bocchi.reply(from, `Wait....`, id)
+                console.log('Creating partytext text...')
+                const llpartytext = body.slice(11)
+                await bocchi.sendFileFromUrl(from, `https://api.vhtear.com/partytext?text=${llpartytext}&apikey=${config.vhtear}`, '', 'Nih...', id)
+                    .then(() => console.log('Success creting image!'))
+                    .catch(async (err) => {
+                        console.error(err)
+                        await bocchi.reply(from, `Error!`, id)
+                    })
+            break	
+           
+            //QR CODES
+
+			
                 
             // Level [ALPHA]
             case 'level':
